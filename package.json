@@ -13,13 +13,16 @@
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
     "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "iframe-resizer-react": "^1.1.0",
+    "openai": "^4.26.0",
     "react": "^18.2.0",
     "react-chat-engine-advanced": "^0.1.28",
     "react-dom": "^18.2.0",
     "reconnecting-websocket": "^4.4.0",
+    "request": "^2.88.2",
     "sharedb": "^4.1.2",
     "vm2": "^3.9.19",
     "y-monaco": "^0.1.5",
@@ -40,5 +43,13 @@
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "vite.config.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranavred4/AI_Assistant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pranavred4/AI_Assistant/issues"
+  },
+  "homepage": "https://github.com/Pranavred4/AI_Assistant#readme"
 }
