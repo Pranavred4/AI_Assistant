@@ -16,11 +16,13 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "firebase": "^10.8.0",
     "iframe-resizer-react": "^1.1.0",
     "openai": "^4.26.0",
     "react": "^18.2.0",
     "react-chat-engine-advanced": "^0.1.28",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
     "reconnecting-websocket": "^4.4.0",
     "request": "^2.88.2",
     "sharedb": "^4.1.2",
@@ -38,7 +40,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "nodemon": "^3.0.3",
-    "vite": "^5.0.8"
+    "vite": "^5.0.12"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "vite.config.js",
