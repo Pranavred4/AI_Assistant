@@ -3,11 +3,14 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/database';
 
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 const LoginPage = () => {
 
-
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,9 +40,10 @@ const LoginPage = () => {
       const teacherData = teachersSnapshot.val();
 
       if (teacherData) {
+        console.log('Teacher data:', teacherData);
         // Redirect to teacher page
         alert('Redirecting to Teacher Page...');
-       
+        navigate('./teachers');
 
       } else {
         // Handle user not found or invalid user type

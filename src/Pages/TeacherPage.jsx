@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
+// TeacherPage.jsx
+import React from 'react';
 
+const TeacherPage = () => {
+    console.log('TeacherPage rendered');
 
-function TeacherPage(){
-
-
-    return(
-
-        <>
-            <h1>Teacher Page</h1>
-
-        </>
-
-
-
-    );
-
+  return (
+    <div>
+      <h1>Teacher Page</h1>
+      
+    </div>
+  );
 };
 
 export default TeacherPage;
