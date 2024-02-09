@@ -23,19 +23,7 @@ app.post("/chat", async (req, res) => {
 
     console.log("prompt: " + prompt);
 
-    
-   /* const completion = await openai.createCompletion({
-        model: "gpt-3.5-turbo",
-        max_tokens: 512,
-        temperature: 0,
-        prompt: prompt,
-
-    });
-
-    console.log(completion.data.choices[0].text);
-
-    res.send(completion.data.choices[0].text);
-    */
+  
     var request = require('request');
     var options = {
       'method': 'POST',
