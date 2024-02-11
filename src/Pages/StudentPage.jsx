@@ -27,7 +27,6 @@ function StudentPage() {
       <button type="submit"></button>
       </form>
       
-      <FirebaseDataComponent />
     
     </>
     

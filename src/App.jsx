@@ -1,50 +1,67 @@
-import { useState, useRef } from 'react';
-import Editor from "@monaco-editor/react";
-import * as Y from "yjs";
-import { WebrtcProvider } from "y-webrtc";
-import { MonacoBinding } from "y-monaco";
+
+import {  Routes, Route ,Navigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import Layout from './Components/Layout.jsx'
+import HomePage from "./Pages/HomePage";
 import ChatBox from "./Components/ChatBox.jsx";
-import ChatApp from "./Components/ChatApp.jsx";
+import TeacherPage from "./Pages/TeacherPage";
+import StudentPage from "./Pages/StudentPage.jsx";
+import EditorPage from "./Pages/EditorPage";
+import LoginPage from './Pages/LoginPage.jsx'
+import { useAuth } from './AuthContext';
 
+  const App = () => {
+   
+    const { isLoggedIn } = useAuth();
+   
 
-function App() {
+    const handleLogin = () => {
+      // Implement your login logic here
+      setLoggedIn(true);
+    };
+  
+    const handleLogout = () => {
+      // Implement your logout logic here
+      setLoggedIn(false);
+    };
 
+    return (
 
-  const editorRef = useRef(null);
-  const [code, setCode] = useState('');
-
-  function handleEditorDidMount(editor, monaco) {
-    editorRef.current = editor;
-
-    const doc = new Y.Doc();
-
-    const provider = new WebrtcProvider("test-room", doc);
-    const type = doc.getText("monaco");
-
-    const binding = new MonacoBinding(type, editorRef.current.getModel(), new Set([editorRef.current]), provider.awareness);
-    console.log(provider.awareness);
-  }
-
-  const handleCodeChange = (value, event) => {
-    setCode(value);
+      
+    <div>
+      <Routes>
+      <Route
+          path="/login"
+          element={
+            isLoggedIn ? (
+              <Navigate to="/" />
+            ) : (
+              <LoginPage/>
+            )
+          }
+        />
+      <Route
+          path="/*"
+          element={(
+            isLoggedIn ? (
+            <Layout>
+              <Routes>
+                 <Route path="/" element={<HomePage />} />
+                 <Route path="/teachers" element={<TeacherPage />} />
+                 <Route path="/students" element={<StudentPage />} />
+                 <Route path="/chat" element={<ChatBox />} />
+                 <Route path="/editor" element={<EditorPage />} />
+              </Routes>
+            </Layout>
+            ) :  (
+              <Navigate to="/login" />
+            )
+          )}
+        />
+      </Routes>
+    </div>
+    );
   };
+  
+  export default App;
 
-  return (
-    <>
-      <ChatBox code={code} onSend={() => setCode('')} />
-      <Editor
-        height="50vh" // Adjust the height as needed
-        width="100vw"
-        theme="vs-dark"
-        onMount={handleEditorDidMount}
-        defaultLanguage="python"
-        onChange={handleCodeChange}
-      />
- 
-
-    </>
-    
-  );
-}
-
-export default App;
