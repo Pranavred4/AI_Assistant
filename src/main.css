@@ -1,0 +1,58 @@
+
+
+.container {
+  display: flow;
+  justify-content: space-around;
+  margin: 20px;
+  width: 100%;
+  text-align: -webkit-center;
+}
+
+
+
+.table {
+  margin-bottom: 20px;
+}
+
+/* Optional: Add styling for better visualization */
+.table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Optional: Add styling for selected rows */
+td {
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.selected {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.mainHeader {
+  background-color: green;
+  text-align: center;
+  color:white;
+}
+
+

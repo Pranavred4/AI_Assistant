@@ -77,15 +77,22 @@ const HomePage = () => {
     return (
 
         <>
-            <div> <h1>AI Assitant</h1></div>
+            <h1 className="center-text">AI Assitant</h1>
 
             <div className="container">
 
-                <br />
+            
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>Teachers</th>
+                            <th className="mainHeader" colSpan={2}>Teachers</th>
+                        </tr>
+                        <tr>
+                        
+                            <th>Name</th>
+                            <th>Email</th>
+                            
+                       
                         </tr>
                     </thead>
                     <tbody>
@@ -96,6 +103,7 @@ const HomePage = () => {
                                 onClick={() => handleTeacherClick(teacher.name)}
                             >
                                 <td>{teacher.name}</td>
+                                <td>{teacher.email}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -105,8 +113,8 @@ const HomePage = () => {
 
                     <table className="table">
                         <thead>
-                            <tr>
-                                <th>Groups for {selectedTeacher}</th>
+                        <tr>
+                                <th className="mainHeader">Groups for {selectedTeacher}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -129,8 +137,11 @@ const HomePage = () => {
 
                     <table className="table">
                         <thead>
+                        <tr>
+                            <th className="mainHeader" colSpan={2}>Students in {selectedGroup}  </th>
+                        </tr>
                             <tr>
-                                <th>{selectedGroup} , Name</th>
+                                <th>Name</th>
                                 <th>Email</th>
                             </tr>
                         </thead>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../Pages/App.css';
+
 import firebase from 'firebase/compat/app'; // Updated import statement
 import 'firebase/compat/database'; // Updated import statement
 

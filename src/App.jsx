@@ -9,6 +9,7 @@ import StudentPage from "./Pages/StudentPage.jsx";
 import EditorPage from "./Pages/EditorPage";
 import LoginPage from './Pages/LoginPage.jsx'
 import { useAuth } from './AuthContext';
+import './main.css';
 
   const App = () => {
    

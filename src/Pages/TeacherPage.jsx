@@ -15,7 +15,7 @@ const TeacherPage = () => {
 
   return (
     <div>
-    <h1>Teachers</h1>
+    <h1 className="center-text">Teachers</h1>
     
   </div>
 );
